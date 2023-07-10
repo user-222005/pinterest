@@ -1,8 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
 import { HiSearch,HiBell,HiChat } from "react-icons/hi";
+import { useSession, signIn } from "next-auth/react"
 const Header = () => {
+    const {data: session} = useSession()
+    console.log("Session", session);
+
   return (
+    
     <div className='flex gap-3 md:gap-2 items-center p-4'>
       <Image
         src="/images/pinterest.png"
@@ -20,6 +25,7 @@ const Header = () => {
       </div>
         <HiBell className='text-[25px] md:text-[40px] text-gray-500' />
         <HiChat className='text-[25px] md:text-[40px] text-gray-500' />
+        <button className='bg-blue-500 text-white px-4' onClick={()=>signIn()}>Sign In</button>
         <Image src="/images/profile.jpeg" alt="man-img" width={50} height={50} 
         className="hover:bg-gray-300 p-2 rounded-full cursor-pointer"
         />
