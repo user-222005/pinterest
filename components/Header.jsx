@@ -27,7 +27,7 @@ const Header = () => {
     }
 
   return (
-    <div className="flex gap-3 md:gap-2 items-center p-4">
+    <div className="flex gap-3 md:gap-2 items-center p-2">
       <Image
         src="/images/pinterest.png"
         alt="pinterest img"
@@ -44,7 +44,7 @@ const Header = () => {
         <input
           type="text"
           placeholder="search"
-          className="bg-transparent outline-none "
+          className="bg-transparent outline-none"
         />
       </div>
       <HiBell className="text-[20px] md:text-[40px] text-gray-500" />
