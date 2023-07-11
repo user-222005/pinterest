@@ -1,11 +1,30 @@
 'use client'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { HiSearch,HiBell,HiChat } from "react-icons/hi";
 import { useSession, signIn, signOut } from "next-auth/react"
+import { doc, getFirestore, setDoc } from "firebase/firestore";
+import { app } from '@/utils/firebase';
+import { useRouter } from 'next/navigation';
 const Header = () => {
+    const router = useRouter()
     const {data: session} = useSession()
     console.log("Session", session);
+    const db = getFirestore(app);
+
+    useEffect(()=>{
+        userSaveInfo();
+    },[session]);
+
+    const userSaveInfo =async()=>{
+        if(session?.user){
+            await setDoc(doc(db, "user",session?.user?.email), {
+                userName: session?.user?.name,
+                email:session?.user?.email,
+                userImage:session?.user?.image 
+              });
+        }
+    }
 
   return (
     <div className="flex gap-3 md:gap-2 items-center p-4">
@@ -16,12 +35,12 @@ const Header = () => {
         height={50}
         className="hover:bg-gray-300 p-2 rounded-full cursor-pointer"
       />
-      <button className="bg-black text-white p-2 rounded-full px-4">
+      <button className="bg-black text-white p-2 rounded-full px-4" onClick={()=>router.push("/")}>
         Home
       </button>
       <button className="font-semibold p-2 rounded-full px-4">Explore</button>
-      <div className="bg-[#e9e9e9] p-3 gap-3 items-center rounded-full w-full hidden md:flex">
-        <HiSearch className="text-[25px] text-gray-500 md:hidden" />
+      <div className="bg-[#e9e9e9] p-3 gap-3 items-center rounded-full w-full  md:w-full">
+        <HiSearch className="text-[25px] text-gray-500" />
         <input
           type="text"
           placeholder="search"
@@ -46,6 +65,7 @@ const Header = () => {
         SignOut
       </button>
       <Image
+      onClick={()=>router.push("/"+session.user.email)}
         src={session?.user.image}
         alt="man-img"
         width={50}
