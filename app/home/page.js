@@ -35,7 +35,7 @@ const HomePage = () => {
         {post.map((item,index)=>{
           return(
             <div key={index}>
-              <Image src={item.image} alt='userimage' height={200} width={200}/>
+              <Image src={item.image} alt='userimage' height={200} width={200} className='shadow-md rounded-xl'/>
               <h2 className='font-semibold text-[25px]'>{item.title}</h2>
             </div>
           )
