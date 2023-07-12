@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 const Header = () => {
     const router = useRouter()
     const {data: session} = useSession()
-    console.log("Session", session);
+    // console.log("Session", session);
     const db = getFirestore(app);
 
     useEffect(()=>{
@@ -66,7 +66,7 @@ const Header = () => {
       </button>
       <Image
       onClick={()=>router.push("/"+session.user.email)}
-        src={session?.user.image}
+        src={session?.user?.image}
         alt="man-img"
         width={50}
         height={50}

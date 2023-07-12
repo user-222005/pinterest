@@ -25,7 +25,7 @@ const Profile = () => {
       // console.log(q);
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
-        let data = doc.data()
+        let data = doc.data();
         data.id = doc.id
         setPin((values)=>[...values,data])
       // doc.data() is never undefined for query doc snapshot
