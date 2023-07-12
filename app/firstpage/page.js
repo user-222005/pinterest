@@ -3,7 +3,7 @@ import {GrLinkNext} from "react-icons/gr"
 
 const FirstPage = () => {
   return (
-    <div className="w-md-screen h-screen flex justify-center items-center flex-col" style={{
+    <div className="w-md-screen min-h-screen flex justify-center items-center flex-col md:w-[768px] sm:w-[640px] lg:w-[1024px] xl:w-[1280px]" style={{
         backgroundImage: `url("https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=600")`,
         height: '100vh',
         backgroundRepeat: 'no-repeat',

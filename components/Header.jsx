@@ -27,7 +27,7 @@ const Header = () => {
     }
 
   return (
-    <div className="flex gap-3 md:gap-2 items-center p-2">
+    <div className="flex gap-3 md:gap-2 items-center p-2 md:w-[768px] sm:w-[640px] lg:w-[1024px] xl:w-[1280px]">
       <Image
         src="/images/pinterest.png"
         alt="pinterest img"
