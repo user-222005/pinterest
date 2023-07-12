@@ -10,7 +10,7 @@ const PinList = ({pin}) => {
 
 
   return (
-    <div  className='grid grid-cols-4'>
+    <div  className='grid grid-cols-4 mt-4'>
         {pin.map((item,id)=>{
             return(
                 <div>

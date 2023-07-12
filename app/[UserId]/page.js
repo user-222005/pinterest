@@ -38,7 +38,6 @@ const Profile = () => {
     <div>
       <UserInfo session={session} />
       <PinList pin = {pin} />
-      <HomePage/>
     </div>
   )
 }
