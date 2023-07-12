@@ -12,4 +12,4 @@ const PinBuilder = () => {
   )
 };
 
-export default PinBuilder
+export default PinBuilder;
