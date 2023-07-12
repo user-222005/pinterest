@@ -46,7 +46,7 @@ const Form=()=> {
                   id:postId
               }
 
-              await setDoc(doc(db,'pinterest-post',postId),
+              await setDoc(doc(db,'user',postId),
               postData).then(resp=>{
                   console.log("Saved")
                   setLoading(true);
