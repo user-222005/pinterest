@@ -15,7 +15,7 @@ const PinList = ({pin}) => {
             return(
                 <div key={id}>
                     <Image src={item.image} alt='fight' height={250} width={250} />
-                    <h2>{item.title}</h2>
+                    <h2 className='font-semibold text-[25px]'>{item.title}</h2>
                 </div>
             )
         })}
