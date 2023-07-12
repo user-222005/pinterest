@@ -34,6 +34,7 @@ const Header = () => {
         width={50}
         height={50}
         className="hover:bg-gray-300 p-2 rounded-full cursor-pointer"
+        onClick={()=>router.push("/firstpage")}
       />
       <button className="bg-black text-white p-2 rounded-full px-4" onClick={()=>router.push("/")}>
         Home
