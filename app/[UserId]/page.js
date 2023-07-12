@@ -1,35 +1,44 @@
 'use client'
+import PinList from '@/components/pinList';
 import UserInfo from '@/components/userInfo';
 import { app } from '@/utils/firebase';
-import { doc, getDoc, getFirestore } from 'firebase/firestore';
+// import { doc, getDoc, getFirestore } from 'firebase/firestore';
 import { useSession } from 'next-auth/react'
 import Image from 'next/image';
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
+import { data } from 'autoprefixer';
+import HomePage from '../home/page';
 
 const Profile = () => {
-    // const [userInfo,setUserInfo]= useState();
+  const [pin,setPin] = useState([])
+  console.log("pin",pin);
     const {data: session} = useSession();
-    // const db = getFirestore(app)
+    const db = getFirestore(app)
 
-    // useEffect(()=>{
-    //     getUserPost()
-    // },[session])
+    useEffect(()=>{
+      getPinList();   
+  },[])
 
-    // const getUserPost = async () => {
-    //   const docRef = doc(db, "user");
-    //   const docSnap = await getDoc(docRef);
-
-    //   if (docSnap.exists()) {
-    //     setUserInfo(docSnap.data())
-    //   } else {
-    //     // docSnap.data() will be undefined in this case
-    //     console.log("No such document!");
-    //   }
-    // };
+  const getPinList =async ()=>{
+      const q = query(collection(db, "user"), where("email", "==", session?.user.email));
+      // console.log(q);
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        let data = doc.data()
+        data.id = doc.id
+        setPin((values)=>[...values,data])
+      // doc.data() is never undefined for query doc snapshot
+      console.log(doc.id, " => ", doc.data());
+      });
+  }
+    
 
   return (
     <div>
       <UserInfo session={session} />
+      <PinList pin = {pin} />
+      <HomePage/>
     </div>
   )
 }
