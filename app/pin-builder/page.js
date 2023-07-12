@@ -1,4 +1,4 @@
-import Form from "@/components/Form"
+import Form from '@/components/Form';
 
 // import Form from '@/components/Form'
 
@@ -10,6 +10,6 @@ const PinBuilder = () => {
       <Form />;
     </div>
   )
-}
+};
 
 export default PinBuilder
