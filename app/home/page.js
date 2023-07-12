@@ -21,7 +21,7 @@ const HomePage = () => {
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         setPost((value)=>[...value,doc.data()])
-        // console.log(doc.id, " => ", doc.data());
+        console.log(doc.id, " => ", doc.data());
       });
   }
     return(
@@ -30,6 +30,7 @@ const HomePage = () => {
           return(
             <div key={index}>
               <Image src={item.image} alt='userimage' height={200} width={200}/>
+              <h2 className='font-semibold text-[25px]'>{item.title}</h2>
             </div>
           )
         })}
