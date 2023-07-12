@@ -7,7 +7,7 @@ import {GrLinkNext} from "react-icons/gr"
 const FirstPage = () => {
     const router = useRouter()
     const {data: session} = useSession();
-    if (session !== null) {
+    if (!session == null) {
         router.push("/firstpage")
     }
 
