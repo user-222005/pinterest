@@ -5,11 +5,17 @@ import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react'
 import Home from '../page';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const HomePage = () => {
   const db = getFirestore(app);
   const [post,setPost]= useState([])
+  const router = useRouter()
   const {data: session} = useSession();
+
+  if (session !== null) {
+    router.push("/firstpage")
+  }
 
   useEffect(()=>{
     getPost();
