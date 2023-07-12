@@ -9,12 +9,17 @@ import { collection, getDocs, getFirestore, query, where } from 'firebase/firest
 import React, { useEffect, useState } from 'react'
 import { data } from 'autoprefixer';
 import HomePage from '../home/page';
+import { useRouter } from 'next/navigation';
 
 const Profile = () => {
+  const router = useRouter()
   const [pin,setPin] = useState([])
   console.log("pin",pin);
     const {data: session} = useSession();
     const db = getFirestore(app)
+    // if (session !== null) {
+    //   router.push("/firstpage")
+    // }
 
     useEffect(()=>{
       getPinList();   

@@ -7,9 +7,12 @@ import {GrLinkNext} from "react-icons/gr"
 const FirstPage = () => {
     const router = useRouter()
     const {data: session} = useSession();
-    if (!session == null) {
-        router.push("/firstpage")
-    }
+    // if (session !== session) {
+    //     router.push("/firstpage")
+    // }
+    // else if(session===session?.user.email){
+    //     router.push("/")
+    // }
 
   return (
     <div className="w-md-screen h-screen flex justify-center items-center flex-col" style={{
