@@ -1,11 +1,16 @@
 'use client'
-import { signIn } from 'next-auth/react';
-// import { useRouter } from 'next/navigation';
+import { signIn, useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 import React from 'react'
 import {GrLinkNext} from "react-icons/gr"
 
 const FirstPage = () => {
-    // const router = useRouter()
+    const router = useRouter()
+    const {data: session} = useSession();
+    if (session !== null) {
+        router.push("/firstpage")
+    }
+
   return (
     <div className="w-md-screen h-screen flex justify-center items-center flex-col" style={{
         backgroundImage: `url("https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=600")`,
