@@ -10,7 +10,7 @@ const UserTag=({user}) =>{
        <div className='flex gap-3 
        items-center'>
        <Image src={user.image} 
-       alt='userImage'
+       alt='mass-image'
        width={45}
        height={45}
        className='rounded-full'/>

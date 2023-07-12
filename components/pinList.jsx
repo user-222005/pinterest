@@ -14,7 +14,7 @@ const PinList = ({pin}) => {
         {pin.map((item,id)=>{
             return(
                 <div key={id}>
-                    <Image src={item.image} alt='user-img' height={250} width={250} />
+                    <Image src={item.image} alt='fight' height={250} width={250} />
                     <h2>{item.title}</h2>
                 </div>
             )
