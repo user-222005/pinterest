@@ -13,9 +13,9 @@ const HomePage = () => {
   const router = useRouter()
   const {data: session} = useSession();
 
-  if (session !== null) {
-    router.push("/firstpage")
-  }
+  // if (session !== null) {
+  //   router.push("/firstpage")
+  // }
 
   useEffect(()=>{
     getPost();
