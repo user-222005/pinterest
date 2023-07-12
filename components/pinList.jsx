@@ -13,7 +13,7 @@ const PinList = ({pin}) => {
     <div  className='grid grid-cols-4 mt-4'>
         {pin.map((item,id)=>{
             return(
-                <div>
+                <div key={id}>
                     <Image src={item.image} alt='user-img' height={250} width={250} />
                     <h2>{item.title}</h2>
                 </div>

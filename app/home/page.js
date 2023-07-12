@@ -28,7 +28,7 @@ const HomePage = () => {
       <div className='grid grid-cols-4'>
         {post.map((item,index)=>{
           return(
-            <div>
+            <div key={index}>
               <Image src={item.image} alt='userimage' height={200} width={200}/>
             </div>
           )
