@@ -11,10 +11,10 @@ const PinList = ({pin}) => {
 
 
   return (
-    <div  className='mt-7 px-2 md:px-5 columns-2 md:columns-3 lg:columns-4 xl:columns-5 space-y-6 mx-auto'>
+    <div  className='mt-7 px-2 md:px-5 columns-1 md:columns-2 lg:columns-4 xl:columns-5 space-y-6 mx-auto'>
         {pin.map((item,id)=>{
             return(
-                <div key={id}>
+                <div key={id} className='flex flex-col items-center'>
                     <Image src={item.image} alt='fight' width={300} height={300}  className='shadow-md rounded-3xl'/>
                     {/* <h2 className='font-semibold text-[25px]'>{item.title}</h2> */}
                 </div>
