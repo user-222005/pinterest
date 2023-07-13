@@ -1,8 +1,8 @@
-import { app } from '@/utils/firebase';
+// import { app } from '@/utils/firebase';
 // import { getFirestore } from 'firebase/firestore';
 // import { useSession } from 'next-auth/react';
 import Image from 'next/image';
-import UserTag from './userTag';
+// import UserTag from './userTag';
 // import React, { useEffect, useState } from 'react'
 
 const PinList = ({pin}) => {
@@ -15,8 +15,8 @@ const PinList = ({pin}) => {
         {pin.map((item,id)=>{
             return(
                 <div key={id}>
-                    <Image src={item.image} alt='fight' height={300} width={250} className='shadow-md rounded-3xl'/>
-                    <h2 className='font-semibold text-[25px]'>{item.title}</h2>
+                    <Image src={item.image} alt='fight' width={250} height={300}  className='shadow-md rounded-3xl hover:ring-opacity-75'/>
+                    {/* <h2 className='font-semibold text-[25px]'>{item.title}</h2> */}
                 </div>
             )
         })}

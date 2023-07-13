@@ -73,7 +73,7 @@ return (
               className='animate-spin'  />:
               <span>Save</span>}</button>
       </div>
-      <div className='grid grid-cols-1 lg:grid-cols-3 gap-10'>
+      <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
          
           <UploadImage setFile={(file)=>setFile(file)} />
         
