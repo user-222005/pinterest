@@ -2,10 +2,10 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation'
 
 const UserInfo = ({session}) => {
-    const router = useRouter();
-    if (session==null) {
-        router.push("/")
-    }
+    // const router = useRouter();
+    // // if (session==null) {
+    // //     router.push("/")
+    // // }
     console.log(session);
   return (
     <div className="flex justify-center items-center flex-col">

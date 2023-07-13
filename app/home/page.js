@@ -31,11 +31,11 @@ const HomePage = () => {
       });
   }
     return(
-      <div className='mt-7 px-2 md:px-5 columns-1 md:columns-3 lg:columns-4 xl:columns-5 space-y-6 mx-auto'>
+      <div className='mt-7 px-2 md:px-5 columns-2 md:columns-3 lg:columns-4 xl:columns-5 space-y-6 mx-auto'>
         {post.map((item,index)=>{
           return(
-            <div key={index} className='relative overflow-hidden'>
-              <Image src={item.image} alt='userimage' height={200} width={200} className='shadow-md rounded-lg  transition scale-125 duration-300'/>
+            <div key={index} className='relative max-w-xs overflow-hidden bg-cover bg-no-repeat'>
+              <Image src={item.image} alt='userimage' height={200} width={200} className='max-w-xs transition duration-300 ease-in-out hover:scale-110 shadow-md rounded-lg'/>
               {/* <h2 className='font-semibold text-[25px]'>{item.title}</h2> */}
             </div>
           )

@@ -15,7 +15,7 @@ const PinList = ({pin}) => {
         {pin.map((item,id)=>{
             return(
                 <div key={id}>
-                    <Image src={item.image} alt='fight' width={250} height={300}  className='shadow-md rounded-3xl hover:ring-opacity-75'/>
+                    <Image src={item.image} alt='fight' width={300} height={300}  className='shadow-md rounded-3xl'/>
                     {/* <h2 className='font-semibold text-[25px]'>{item.title}</h2> */}
                 </div>
             )
