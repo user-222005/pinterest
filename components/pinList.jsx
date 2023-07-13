@@ -1,13 +1,13 @@
 import { app } from '@/utils/firebase';
 // import { getFirestore } from 'firebase/firestore';
-import { useSession } from 'next-auth/react';
+// import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import UserTag from './userTag';
 // import React, { useEffect, useState } from 'react'
 
 const PinList = ({pin}) => {
     // const db = getFirestore(app);
-    const {data: session} = useSession();
+    // const {data: session} = useSession();
 
 
   return (

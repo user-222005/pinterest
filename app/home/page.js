@@ -1,7 +1,7 @@
 'use client'
 import { app } from '@/utils/firebase';
 import { collection, getDocs, getFirestore } from "firebase/firestore";
-import { useSession } from 'next-auth/react';
+// import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react'
 import Home from '../page';
 import Image from 'next/image';
@@ -11,7 +11,7 @@ const HomePage = () => {
   const db = getFirestore(app);
   const [post,setPost]= useState([])
   const router = useRouter()
-  const {data: session} = useSession();
+  // const {data: session} = useSession();
 
   // if (session !== null) {
   //   router.push("/firstpage")

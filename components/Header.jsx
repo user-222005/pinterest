@@ -12,19 +12,19 @@ const Header = () => {
     // console.log("Session", session);
     const db = getFirestore(app);
 
-    useEffect(()=>{
-        userSaveInfo();
-    },[session]);
+    // useEffect(()=>{
+    //     userSaveInfo();
+    // },[session]);
 
-    const userSaveInfo =async()=>{
-        if(session?.user){
-            await setDoc(doc(db, "user",session?.user?.email), {
-                userName: session?.user?.name,
-                email:session?.user?.email,
-                userImage:session?.user?.image 
-              });
-        }
-    }
+    // const userSaveInfo =async()=>{
+    //     if(session?.user){
+    //         await setDoc(doc(db, "user",session?.user?.email), {
+    //             userName: session?.user?.name,
+    //             email:session?.user?.email,
+    //             userImage:session?.user?.image 
+    //           });
+    //     }
+    // }
 
   return (
     <div className="flex gap-3 md:gap-2 items-center w-screen p-2">
